@@ -24,8 +24,8 @@ A **secure, offline medication tracking** system that helps users keep track of 
 🌍 **Offline Functionality** – Works without an internet connection.  
 
 ## 🚀 Getting Started  
-3️⃣ **Install the Mobile App** – Build and install the app on your Android phone.  
-4️⃣ **Pair & Sync** – Connect via **Bluetooth or Wi-Fi** and start tracking medications!  
+1️⃣ **Install the Mobile App** – Build and install the app on your Android phone.  
+2️⃣ **Pair & Sync** – Connect via **Bluetooth or Wi-Fi** and start tracking medications!  
 
 ## 📷 Screenshots
 ![InsideBox v3](https://github.com/user-attachments/assets/d3399a95-b106-4107-8e02-323c22a4ba47)
