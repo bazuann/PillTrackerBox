@@ -33,3 +33,7 @@ A **secure, offline medication tracking** system that helps users keep track of 
 
 ## 🤝 Contributing  
 Pull requests are welcome! Feel free to **fork** this repo and improve the project. 💡  
+
+## 🖨️ 3D Model  
+We use a **3D model for holder** for the device. This model was originally created by **[Digitronix - Jesús Ramírez]** and can be found here:  
+📌 **[Download 3D Model](https://grabcad.com/library/base-de-pruebas-sensor-optico-tcrt5000-1)** 
