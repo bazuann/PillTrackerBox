@@ -30,6 +30,8 @@ A **secure, offline medication tracking** system that helps users keep track of 
 ## 📷 Screenshots
 ![Fİnal box v1](https://github.com/user-attachments/assets/6cd3ead2-dc39-4288-abbd-6a1b01776536)
 ![Whats inside in box](https://github.com/user-attachments/assets/6be57038-ead9-4887-ad57-220e9e17c60b)
+![Fİnal box v20](https://github.com/user-attachments/assets/ea1840d6-6850-4cb2-815d-144177a8102a)
+
 
 
 
