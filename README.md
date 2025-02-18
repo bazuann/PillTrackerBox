@@ -6,7 +6,7 @@ A **secure, offline medication tracking** system that helps users keep track of 
 ✅ **Medication Inventory** – Track available medications at home.  
 ✅ **Daily Medication Schedule** – Set reminders with dosage, time, and meal conditions.  
 ✅ **Sync Between Device & App** – Data stays up to date over **Wi-Fi/Bluetooth**.  
-✅ **Privacy-Focused** – Works entirely on a **local network** without cloud storage.
+✅ **Privacy-Focused** – Works entirely on a **local network** without cloud storage.  
 ✅ **Removable Drawer** – Designed to store medicine containers securely and conveniently. 
 
 ## 🛠 Hardware Components  
