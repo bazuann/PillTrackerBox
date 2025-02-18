@@ -42,5 +42,6 @@ Pull requests are welcome! Feel free to **fork** this repo and improve the proje
 ## 🖨️ 3D Model  
 I used a **3D model for holder** for the device. This model was originally created by **[Digitronix - Jesús Ramírez]** and can be found here:  
 📌 **[Download 3D Model](https://grabcad.com/library/base-de-pruebas-sensor-optico-tcrt5000-1)** 
+
 I used a **medicine** for the device. This model was originally created by **[Berfin Aybüke Kalender]** and can be found here:  
 📌 **[Download 3D Model](https://grabcad.com/library/medicine-1)** 
