@@ -1,56 +1,56 @@
 <div align="center">
 
-# 💊 SmartPillTracker
+# SmartPillTracker
 
-**A smart pill organizer that logs every dose automatically. No buttons, no manual entry.**
+**Alınan her dozu otomatik olarak kaydeden akıllı ilaç kutusu. Buton yok, elle giriş yok.**
 
-ESP32 · Custom PCB · Optical sensing · 3D-printed enclosure · Spring Boot backend · Android app
+ESP32 · Özel PCB · Optik algılama · 3D baskı kutu · Spring Boot backend · Android uygulama
 
-<img src="docs/images/device-top.jpg" width="520" alt="SmartPillTracker – 6-slot device">
+<img src="docs/images/device-top.jpg" width="520" alt="SmartPillTracker – 6 bölmeli cihaz">
 
 </div>
 
-> **Note:** This is a closed-source product. The repository is a project showcase: it documents the design, the hardware and the system architecture. Source code, PCB production files and CAD files are not published.
+> **Not:** Bu proje kapalı kaynaklı bir üründür. Bu repo projenin tasarımını, donanımını ve sistem mimarisini tanıtmak için hazırlanmıştır. Kaynak kodlar, PCB üretim dosyaları ve CAD dosyaları paylaşılmamaktadır.
 
 ---
 
-## The problem
+## Problem
 
-People on daily medication, especially elderly patients and those taking several prescriptions, often can't remember whether they've already taken a dose. Reminder apps tell them *when* to take it, but they still depend on the user tapping "taken", and that is exactly the step people forget.
+Düzenli ilaç kullanan kişiler, özellikle yaşlı hastalar ve birden fazla ilaç kullananlar, o günkü dozu alıp almadıklarını çoğu zaman hatırlayamaz. Hatırlatıcı uygulamalar ilacın *ne zaman* alınacağını söyler. Ama dozun alındığını kaydetmek için kullanıcının yine "aldım" butonuna basması gerekir. Unutulan adım da tam olarak budur.
 
-## The solution
+## Çözüm
 
-SmartPillTracker does the logging inside the box itself. Each slot holds a removable pill holder with an optical sensor next to it. When a pill or blister strip is taken out, the sensor state changes. The ESP32 reports the event over Wi-Fi, and the backend updates the dose history and remaining stock right away. The user just takes their medicine.
+SmartPillTracker kayıt işini kutunun kendisine yaptırır. Her bölmede çıkarılabilir bir ilaç tutucu ve onun yanında bir optik sensör bulunur. Hap ya da blister bölmeden alındığında sensörün durumu değişir. ESP32 bu olayı Wi-Fi üzerinden sunucuya bildirir, backend de doz geçmişini ve kalan stoğu anında günceller. Kullanıcının tek yapması gereken ilacını almaktır.
 
-## Features
+## Özellikler
 
-- **Automatic dose detection:** optical sensors detect removal from each slot, with debouncing on the device to filter out false triggers
-- **6 removable slots:** 4 small and 2 large holders that lift out for refilling and cleaning
-- **Stock tracking:** the remaining pill count drops with every detected dose, and a warning appears when stock runs low
-- **Dose history and adherence:** every event is timestamped, and adherence reports are built from the history
-- **One-tap undo:** accidental detections can be reverted from the app
-- **Per-device security:** each device is registered to a user account and authenticates with its own API key
-- **Companion app:** history, reminders and stock in English and Turkish, with dark and light mode
+- **Otomatik doz algılama:** Optik sensörler her bölmeden ilaç alındığını algılar. Yanlış tetiklemeler cihaz üzerinde debounce ile filtrelenir.
+- **6 çıkarılabilir bölme:** 4 küçük ve 2 büyük tutucu var. Doldurmak ve temizlemek için yerinden çıkarılabilirler.
+- **Stok takibi:** Her algılanan dozda kalan ilaç sayısı düşer. Stok azaldığında uyarı verilir.
+- **Doz geçmişi ve uyum takibi:** Her olay zaman damgasıyla kaydedilir. İlaç uyum raporları bu geçmişten oluşturulur.
+- **Tek dokunuşla geri alma:** Yanlışlıkla algılanan bir doz uygulamadan geri alınabilir.
+- **Cihaz bazlı güvenlik:** Her cihaz bir kullanıcı hesabına kayıtlıdır ve kendi API anahtarıyla kimlik doğrular.
+- **Mobil uygulama:** Geçmiş, hatırlatmalar ve stok bilgisi tek ekranda. Türkçe ve İngilizce dil desteği, açık ve koyu tema var.
 
 ---
 
-## Hardware
+## Donanım
 
-### Custom PCB, v2 (current)
+### Özel PCB, v2 (güncel sürüm)
 
 <p align="center">
-  <img src="docs/images/pcb-v2-assembled.jpg" width="600" alt="PCB v2 assembled">
+  <img src="docs/images/pcb-v2-assembled.jpg" width="600" alt="Montajı yapılmış PCB v2">
 </p>
 
-I designed it in **EasyEDA** as a carrier board for the ESP32 dev board. It has:
-- an on-board **DC-DC buck converter** module and an **AMS1117 3.3 V regulator**, so the device runs from a single external supply
-- **18 two-pin connectors** with an on-board resistor network for the sensor lines, so sensors plug in and the box needs no point-to-point soldering
-- "Made by Batuhan Gümüş" silkscreen branding
+ESP32 geliştirme kartı için **EasyEDA**'da tasarladığım taşıyıcı kart. Üzerinde şunlar var:
+- Kart üzerinde **DC-DC buck dönüştürücü** modülü ve **AMS1117 3.3 V regülatör**. Cihaz tek bir harici güç kaynağıyla çalışıyor.
+- Sensör hatları için kart üzerinde direnç ağı ve **18 adet iki pinli konnektör**. Sensörler doğrudan karta takılıyor, kutunun içinde tek tek kablo lehimlemeye gerek kalmıyor.
+- Serigrafide "Made by Batuhan Gümüş" imzası.
 
-The first batch was ordered and assembled in-house:
+İlk üretim partisi sipariş edilip montajı tarafımdan yapıldı:
 
 <p align="center">
-  <img src="docs/images/pcb-v2-batch.jpg" width="700" alt="PCB v2 batch">
+  <img src="docs/images/pcb-v2-batch.jpg" width="700" alt="PCB v2 üretim partisi">
 </p>
 
 ### PCB v1
@@ -59,80 +59,80 @@ The first batch was ordered and assembled in-house:
   <img src="docs/images/pcb-v1.jpg" width="520" alt="PCB v1">
 </p>
 
-The first revision was a simple carrier for a 38-pin ESP32 with 13 three-pin headers for off-the-shelf TCRT5000 sensor modules. v2 replaced the bulky modules with discrete sensors and added on-board power regulation.
+İlk revizyon, 38 pinli ESP32 için basit bir taşıyıcı karttı. Hazır TCRT5000 sensör modülleri için 13 adet üç pinli soket içeriyordu. v2'de hacimli modüllerin yerine ayrık sensörler kullanıldı ve güç regülasyonu kartın üzerine alındı.
 
-### Enclosure and sensing
+### Kutu ve algılama
 
 <p align="center">
-  <img src="docs/images/sensor-holders.jpg" height="380" alt="Holders with sensors">
-  <img src="docs/images/device-inside.jpg" height="380" alt="Inside the enclosure">
+  <img src="docs/images/sensor-holders.jpg" height="380" alt="Sensörlü tutucular">
+  <img src="docs/images/device-inside.jpg" height="380" alt="Kutunun içi">
 </p>
 
-I designed the enclosure in **Fusion 360** and 3D-printed it. It has:
-- a sensor plate that sits under the holders, with the PCB mounted inside the base
-- numbered slots with indicator holes on the top face
-- removable holders that are curved to fit both loose pills and blister strips
+Kutuyu **Fusion 360**'ta tasarlayıp 3D yazıcıda bastım. Tasarımda şunlar var:
+- Tutucuların altına oturan bir sensör plakası. PCB de tabanın içine monte ediliyor.
+- Üst yüzeyde numaralı bölmeler ve gösterge delikleri.
+- Hem tek tek haplara hem blister ambalajlara uyacak şekilde kavisli, çıkarılabilir tutucular.
 
-### Design evolution
+### Tasarımın gelişimi
 
-| 1. Single-slot proof of concept | 2. 12-slot prototype | 3. 6-slot product design |
+| 1. Tek bölmeli konsept doğrulama | 2. 12 bölmeli prototip | 3. 6 bölmeli ürün tasarımı |
 |:---:|:---:|:---:|
 | <img src="docs/images/prototype-single-slot.jpg" height="240"> | <img src="docs/images/prototype-12-slot.jpg" height="240"> | <img src="docs/images/render-6-slot.png" height="240"> |
-| One holder + one TCRT5000 to validate detection | Full 12-compartment box, hand-wired | Reduced to 6 slots for a compact, printable product with custom PCB |
+| Algılamayı doğrulamak için tek tutucu ve tek TCRT5000 | 12 bölmeli tam kutu, kablolaması elle yapıldı | Kompakt ve kolay basılabilir bir ürün için 6 bölmeye indirildi, özel PCB eklendi |
 
 ---
 
-## System architecture
+## Sistem mimarisi
 
 ```
 ┌────────────────────────┐   Wi-Fi / HTTP    ┌────────────────────────────┐        ┌─────────────────┐
-│  SmartPillTracker      │  sensor events    │  Backend (Spring Boot)     │  REST  │  Mobile app     │
-│  ESP32 + optical       │ ────────────────▶ │  • device auth (API key)   │ ◀────▶ │  (Android)      │
-│  sensors + custom PCB  │                   │  • medications & stock     │        └─────────────────┘
-└────────────────────────┘                   │  • event log & analytics   │
+│  SmartPillTracker      │  sensör olayları  │  Backend (Spring Boot)     │  REST  │  Mobil uygulama │
+│  ESP32 + optik         │ ────────────────▶ │  • cihaz doğrulama (API)   │ ◀────▶ │  (Android)      │
+│  sensörler + özel PCB  │                   │  • ilaç ve stok yönetimi   │        └─────────────────┘
+└────────────────────────┘                   │  • olay kaydı ve analiz    │
                                              │  PostgreSQL + Flyway       │
                                              └────────────────────────────┘
 ```
 
-1. The ESP32 reads every slot sensor continuously, every 200–300 ms.
-2. When a stable state change happens (pill present → removed, 300 ms debounce), it sends an authenticated event:
+1. ESP32 her bölmenin sensörünü sürekli okur (200–300 ms aralıklarla).
+2. Sensörde kararlı bir durum değişikliği olduğunda (hap var → hap alındı, 300 ms debounce), cihaz kimliği doğrulanmış bir olay gönderir:
    ```json
    { "deviceId": "esp32-01", "sensorIndex": 3, "event": "pill_taken" }
    ```
-3. The backend verifies the device key, logs the event, decrements stock for that slot's medication and updates the adherence data.
-4. The app shows live slot status, history, stock and analytics.
+3. Backend cihaz anahtarını doğrular ve olayı kaydeder. O bölmedeki ilacın stoğunu bir azaltır, uyum verilerini günceller.
+4. Uygulama bölmelerin anlık durumunu, geçmişi, stoğu ve analizleri gösterir.
 
 ### Backend
 
-- REST API covering users, devices, medications, sensor events and analytics
-- Two separate kinds of API key: user keys for the app and device keys for the hardware
-- Database schema: `users`, `devices`, `medications`, `sensor_events`, managed by Flyway migrations
-- Swagger / OpenAPI documentation
-- Deployed on a Linux VPS as a systemd service, with PostgreSQL
+- Kullanıcı, cihaz, ilaç, sensör olayı ve analiz işlemleri için REST API
+- İki ayrı API anahtarı türü: uygulama için kullanıcı anahtarı, donanım için cihaz anahtarı
+- Veritabanı şeması: `users`, `devices`, `medications`, `sensor_events`. Şema Flyway migration'larıyla yönetiliyor.
+- Swagger / OpenAPI dokümantasyonu
+- Linux VPS üzerinde PostgreSQL ile birlikte systemd servisi olarak çalışıyor
 
 ---
 
-## Tech stack
+## Kullanılan teknolojiler
 
-| Layer | Technologies |
+| Katman | Teknolojiler |
 |---|---|
-| **Embedded** | ESP32, Arduino framework, TCRT5000 optical sensors |
-| **PCB** | EasyEDA, 2-layer board, DC-DC buck + AMS1117 LDO |
-| **Mechanical** | Fusion 360, FDM 3D printing |
+| **Gömülü sistem** | ESP32, Arduino framework, TCRT5000 optik sensörler |
+| **PCB** | EasyEDA, 2 katmanlı kart, DC-DC buck + AMS1117 LDO |
+| **Mekanik** | Fusion 360, FDM 3D baskı |
 | **Backend** | Java 21, Spring Boot 3, Spring Security, Spring Data JPA, Flyway, PostgreSQL, OpenAPI |
-| **Mobile** | Android app, published on Google Play |
-| **Web** | Product website with an interactive 3D configurator, EN/TR |
+| **Mobil** | Android uygulama, Google Play'de yayında |
+| **Web** | İnteraktif 3D ürün yapılandırıcılı tanıtım sitesi, TR/EN |
 
 ---
 
-## Links
+## Bağlantılar
 
-- 📱 **App:** [SmartPillTracker on Google Play](https://play.google.com/store/apps/details?id=com.bazuan.pilltracker2026)
+- **Uygulama:** [Google Play'de SmartPillTracker](https://play.google.com/store/apps/details?id=com.bazuan.pilltracker2026)
 
-## Author
+## Geliştirici
 
 **Batuhan Gümüş**: [GitHub @bazuann](https://github.com/bazuann)
 
-## License
+## Lisans
 
-© 2025–2026 Batuhan Gümüş. All rights reserved. See [LICENSE](LICENSE).
+© 2025–2026 Batuhan Gümüş. Tüm hakları saklıdır. Ayrıntılar için [LICENSE](LICENSE) dosyasına bakın.
